@@ -27,10 +27,10 @@ class Solution:
         else:
             for i in range(len(prices) - 1):
                 for j in range(i + 1, len(prices)):
-                    if i > j:
+                    if prices[i] > prices[j]:
                         pass
                     else:
-                        profit = j - i
+                        profit = prices[j] - prices[i]
                         profits.append(profit)
             return max(profits)
           

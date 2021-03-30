@@ -22,9 +22,7 @@ from typing import List
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         profits = []
-        if prices == sorted(prices, reverse=True):
-            return 0
-        else:
+        try:
             for i in range(len(prices) - 1):
                 for j in range(i + 1, len(prices)):
                     if prices[i] > prices[j]:
@@ -33,6 +31,8 @@ class Solution:
                         profit = prices[j] - prices[i]
                         profits.append(profit)
             return max(profits)
+        except:
+            return 0
           
 result = Solution()
 result.maxProfit([[7,6,4,3,1]])

@@ -21,18 +21,14 @@ from typing import List
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        profits = []
-        try:
-            for i in range(len(prices) - 1):
-                for j in range(i + 1, len(prices)):
-                    if prices[i] > prices[j]:
-                        pass
-                    else:
-                        profit = prices[j] - prices[i]
-                        profits.append(profit)
-            return max(profits)
-        except:
-            return 0
+
+        profits = [0]
+
+        for i in range(len(prices) - 1):
+            if prices[i] <= max(prices[i+1:]):
+                profit = max(prices[i+1:]) - prices[i]
+                profits.append(profit)
+        return max(profits)
           
 result = Solution()
-result.maxProfit([[7,6,4,3,1]])
+result.maxProfit([7,6,4,3,1])

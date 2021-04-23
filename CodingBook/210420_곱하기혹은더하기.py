@@ -6,7 +6,7 @@ nums = list((map(str, input())))
 result = 0
 
 for i in nums:
-    if (result == 0) | (int(i) == 1) | (int(i) == 0):
+    if (result == 0) | (result == 1) | (int(i) == 1) | (int(i) == 0):
         result += int(i)
 
     else:

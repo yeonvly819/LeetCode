@@ -3,16 +3,15 @@
 S = input()
 
 w = ''
-n = ''
+n = 0
 
 for i in S:
     try:
         if int(i):
-            n += i
+            n += int(i)
     except:
         w += i
 
 w = ''.join(sorted(list(w), reverse=False))
-n = sum(map(int, list(n)))
 
 print(w + str(n))

@@ -11,4 +11,4 @@ for i in nums:
     else:
         new_num += i
 
-print(min(len(new_num), sum(map(int, list(new_num)))))
+print(min((len(new_num) - sum(map(int, list(new_num)))), sum(map(int, list(new_num)))))

@@ -3,9 +3,8 @@ import re
 def solution(new_id):
 
     new_id = new_id.lower() # step1
-    new_id = ''.join(re.compile('[a-z0-9-_.]?').findall(new_id)) # step2
-    new_id = new_id.replace('...', '.') # step3
-    new_id = new_id.replace('..', '.') # step3
+    new_id = ''.join(re.compile('[a-z0-9-_.]+').findall(new_id)) # step2
+    new_id = ''.join(re.sub(r'[.]{2,}', '.', new_id)) # step3
     new_id = new_id.strip('.') # step4
     
     # step5

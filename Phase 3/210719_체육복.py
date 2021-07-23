@@ -43,14 +43,15 @@ print(solution(5, [1, 2, 3], [2, 3, 4]))
 #%%
 # 맹한쓰앵님
 def solution(n, lost, reserve):
-    answer = n - len(lost) # 3명
+    answer = n - len(lost) # 3명 (lost가 아닌 애들은 무조건 수업을 들을 수 있음)
     res = []
+
     # 여벌 체육복을 가져온 학생이 도난당한 경우
     for r in reserve:
         if r in lost:
             lost.remove(r)
             answer += 1
-        else:
+        else: # 여벌 체육복 가져온 학생이 도난당하지는 않은 경우
             res.append(r)
     # 앞뒤
     for r in res:

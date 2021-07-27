@@ -11,6 +11,7 @@ def solution(s):
         if i.isdigit():
             answer += str(i)
         else:
+            
             res += i
             if res in num_dict:
                 answer += str(num_dict[res])
